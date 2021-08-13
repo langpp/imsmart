@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="viewport-fit=cover,width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4786FF">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>I'm Smart</title>
+  <link rel="stylesheet" href="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/style.css" id="style">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/framework7.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="apple-touch-icon" href="img/logo.png">
+  <link rel="icon" href="img/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div class="statusbar"></div>
+    <div class="view view-main view-init ios-edges" data-url="/">
+      <div class="page">
+        <div class="page-content">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script src="js/framework7.min.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/highcharts.js"></script>
+  <script src="js/moment.js"></script>
+  <script src="js/app.js"></script>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
+  <!-- cookie js -->
+  <script src="assets/js/jquery.cookie.js"></script>
+
+  <!-- Customized jquery file  -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/color-scheme.js"></script>
+
+  <!-- Chart js script -->
+  <script src="assets/vendor/chart-js-3.3.1/chart.min.js"></script>
+
+  <!-- Progress circle js script -->
+  <script src="assets/vendor/progressbar-js/progressbar.min.js"></script>
+
+  <!-- swiper js script -->
+  <script src="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
+
+  <!-- page level custom script -->
+  <script src="js/insight/auth.js"></script>
+  <script src="js/insight/dashboard.js"></script>
+  <script src="js/insight/pembahasan.js"></script>
+  <script src="js/insight/ujian.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('deviceready', function () {
+      setTimeout(function () {
+        StatusBar.overlaysWebView(false);
+        StatusBar.backgroundColorByHexString('#4786FF');
+        StatusBar.styleLightContent();
+      }, 1500);
+      if(window.MobileAccessibility){
+          window.MobileAccessibility.usePreferredTextZoom(false);
+      }
+    });
+  </script>
+  <script type="text/javascript">
+    function getCamera() {
+      navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 100,
+        destinationType: Camera.DestinationType.FILE_URI
+      });
+    }
+
+    function getPhoto() {
+      navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 100,
+        destinationType: navigator.camera.DestinationType.FILE_URI,
+        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+      });
+    }
+
+    function onSuccess(imageData) {
+      var ratioCropOptions = {
+        quality: 100,
+        targetWidth: 1080,
+        targetHeight: 1080,
+        widthRatio: -1,
+        heightRatio: -1
+      };
+
+      plugins.crop(function success(data) {
+        var fileURL = data;
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.mimeType = "image/jpeg";
+
+        var ft = new FileTransfer();
+        ft.onprogress = function (e) {
+
+        };
+        $('#imagePreview').css('background-image', 'url(' + data + ')');
+        encodeImageUri(data, function (base64Image) {
+          $('#valPreview').val(base64Image);
+        });
+
+      }, function fail() {}, imageData, ratioCropOptions);
+    }
+    
+    function encodeImageUri(path, callback) {
+      window.resolveLocalFileSystemURL(path, gotFile, fail);
+
+      function fail(e) {
+        alert('Cannot found requested file');
+      }
+
+      function gotFile(fileEntry) {
+        fileEntry.file(function (file) {
+          var reader = new FileReader();
+          reader.onloadend = function (e) {
+            var content = this.result;
+            callback(content);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    }
+
+    function onFail(message) {
+      messageAlert(message);
+    }
+
+    let status_code = {
+      404: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('URL Tidak Ditemukan!', 'Notifikasi');
+      },
+      400: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Bad Request, Silahkan Coba Lagi!', 'Notifikasi');
+      },
+      401: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Failed Authorization!', 'Notifikasi');
+      },
+      403: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('The user isnt authorized!', 'Notifikasi');
+      },
+      500: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Internal server error!', 'Notifikasi');
+      },
+      502: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Bad Gateway!', 'Notifikasi');
+      },
+      201: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('The requested resource has been created', 'Notifikasi');
+      }
+    }
+
+    let status_code_get = {
+      404: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('URL Tidak Ditemukan!', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      },
+      400: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Bad Request, Silahkan Coba Lagi!', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      },
+      401: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Failed Authorization!', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      },
+      403: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('The user isnt authorized!', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      },
+      500: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Internal server error!', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      },
+      502: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('Bad Gateway!', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      },
+      201: function (xhr) {
+        app.dialog.close();
+        app.progressbar.hide();
+        app.dialog.alert('The requested resource has been created', 'Notifikasi');
+        app.router.back({
+          'force': true
+        });
+      }
+    }
+
+    function errorkesalahan() {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert('Ada Keselahan Silahkan Coba Lagi!', 'Notifikasi');
+    }
+
+    function errorkesalahanback() {
+      app.dialog.close();
+      app.dialog.alert('Ada Keselahan Silahkan Coba Lagi!', 'Notifikasi', function () {
+        app.router.back({
+          'force': true
+        });
+      });
+    }
+
+    function nonetworkaccess() {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert('No network access!', 'Notifikasi');
+    }
+
+    function nonetworkaccessback() {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert('No network access!', 'Notifikasi', function () {
+        app.router.back({
+          'force': true
+        });
+      });
+    }
+
+    function messageAlert(text) {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert(text, 'Notifikasi');
+    }
+
+    function messageAlertnavigate(text, url) {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert(text, 'Notifikasi', function () {
+        app.router.navigate(url, {
+          reloadCurrent: true
+        });
+      });
+    }
+
+    function successgenerate(text, url) {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert(text, 'Notifikasi', function () {
+        window.open(url, "_system");
+      });
+    }
+
+    function messageAlertrefresh(text, url) {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert(text, 'Notifikasi', function () {
+        window.location.reload(true);
+      });
+    }
+
+    function messageAlertBack(text) {
+      app.dialog.close();
+      app.progressbar.hide();
+      app.dialog.alert(text, 'Notifikasi', function () {
+        app.router.back({
+          'force': true
+        });
+      });
+    }
+
+    function toastralert(word) {
+      app.toast.create({
+        text: word,
+        position: 'center',
+        closeTimeout: 2000,
+      }).open();
+    }
+
+    function b64toBlob(b64Data, contentType, sliceSize) {
+      contentType = contentType || '';
+      sliceSize = sliceSize || 512;
+
+      var byteCharacters = atob(b64Data);
+      var byteArrays = [];
+
+      for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+        var byteNumbers = new Array(slice.length);
+        for (var i = 0; i < slice.length; i++) {
+          byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        var byteArray = new Uint8Array(byteNumbers);
+
+        byteArrays.push(byteArray);
+      }
+
+      var blob = new Blob(byteArrays, {
+        type: contentType
+      });
+      return blob;
+    }
+
+    function savebase64AsImageFile(folderpath, filename, content, contentType) {
+      var DataBlob = b64toBlob(content, contentType);
+
+      window.resolveLocalFileSystemURL(folderpath, function (dir) {
+        dir.getFile(filename, {
+          create: true
+        }, function (file) {
+          file.createWriter(function (fileWriter) {
+            app.dialog.alert('QRCode Berhasil Disimpan!', 'Notifikasi');
+            fileWriter.write(DataBlob);
+          }, function () {
+            app.dialog.alert('QRCode Gagal Disimpan!', 'Notifikasi');
+          });
+        });
+      });
+    }
+
+    function characterlimiter(word, limit) {
+      var result = word.substring(0, limit);
+      return result;
+    }
+
+    function logout() {
+      app.dialog.confirm('Apa Anda Yakin Untuk Logout?', 'Perhatian', function () {
+        localStorage.clear();
+        app.router.navigate("/auth/login");
+      });
+    }
+  </script>
+</body>
+</html>

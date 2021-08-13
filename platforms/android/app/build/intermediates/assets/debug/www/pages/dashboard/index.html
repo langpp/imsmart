@@ -1,0 +1,516 @@
+<div class="page dashboard" data-name="dashboard">
+  <div class="toolbar toolbar-bottom tabbar-labels">
+    <div class="toolbar-inner">
+      <a href="#tab-1" class="tab-link tab-link-active">
+        <i class="icon material-icons md-only">dashboard</i>
+        <span class="tabbar-label" style="text-transform: capitalize;">Dashboard</span>
+      </a>
+      <a href="#tab-2" class="tab-link">
+        <i class="icon material-icons md-only">format_list_numbered</i>
+        <span class="tabbar-label" style="text-transform: capitalize;">Ujian</span>
+      </a>
+      <a href="#tab-3" class="tab-link">
+        <i class="icon material-icons md-only">playlist_add_check</i>
+        <span class="tabbar-label" style="text-transform: capitalize;">Pembahasan</span>
+      </a>
+      <a href="#tab-4" class="tab-link">
+        <i class="icon material-icons md-only">show_chart</i>
+        <span class="tabbar-label" style="text-transform: capitalize;">Analisis</span>
+      </a> 
+      <a href="#tab-5" class="tab-link">
+        <i class="icon material-icons md-only">person</i>
+        <span class="tabbar-label" style="text-transform: capitalize;">Profile</span>
+      </a> 
+    </div>
+  </div>
+  <div class="tabs bg-white">
+
+    <!-- TAB 1 -->
+    <div id="tab-1" class="page-content tab tab-active pb-55">
+      <div class="page-content bg-dashboard" style="padding-bottom: 90px;">
+        <div class="white-padding-margin bg-white no-margin box-shadow-1">
+          <div class="block margin-15">
+            <div class="row pt-4 pb-3">
+              <div class="col-70">
+                <h3>Hai, Rudi Sebastian</h3>
+              </div>
+              <div class="col-30">
+                <img src="./img/profile.png" alt="" class="profile-dashboard">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-padding-margin bg-white margin-top">
+          <div class="block margin-15 pt-3 pb-3">
+           <div class="row">
+             <div class="w-50" style="padding: 0px 0px!important;">
+               <div class="card shadow-sm bg-primary text-white text-center">
+                <div class="card-body">
+                  <h2 class="mb-3">10</h2>
+                  <h4 class="text-white small">Kategori Kuis</h4>
+                </div>
+              </div>
+              <div class="card shadow-sm bg-success text-white text-center mt-1">
+                <div class="card-body">
+                  <h2 class="mb-3">6</h2>
+                  <h4 class="text-white small">Total Kuis</h4>
+                </div>
+              </div>
+            </div>
+            <div class="w-50" style="padding: 0px 0px!important;">
+             <div class="card shadow-sm bg-danger text-white text-center" style="height: 227px;">
+              <div class="card-body" style="margin-top:65px;">
+                <h2 class="mb-3">173</h2>
+                <h4 class="text-white small">Total Kuis</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-padding-margin bg-white margin-top">
+      <div class="block margin-15 pt-3 pb-3">
+       <div class="row">
+        <div class="col-100">
+          <h6>Overall Performance</h6>
+          <canvas id="areachart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="white-padding-margin bg-white margin-top">
+    <div class="block margin-15 pt-3 pb-3">
+     <div class="row">
+      <div class="col-100">
+        <h6>Best Performance All Quiz</h6>
+        <canvas id="barchart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- TAB 2 -->
+<div id="tab-2" class="page-content tab pb-55">
+  <div class="page-content bg-dashboard" style="padding-bottom: 90px;">
+    <div class="white-padding-margin bg-white no-margin box-shadow-1">
+      <div class="block margin-15">
+        <div class="row pt-4 pb-3">
+          <div class="col-70">
+            <h3>Ujian</h3>
+          </div>
+          <div class="col-30">
+            <i class="icon material-icons md-only icon-left-dashboard">settings</i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-padding-margin bg-white margin-top">
+      <div class="block margin-15 pt-3 pb-3">
+       <div class="row">
+        <div class="col-100">
+          <h6>Kategori Kuis</h6>
+          <a href="#" class="right-button-dashboard">Lihat Semua</a>
+          <div class="row">
+            <div class="w-100" style="padding: 0px 0px!important;">
+             <div class="card mb-2 overflow-hidden shadow-sm bg-default text-white">
+              <div class="overlay"></div>
+              <div class="coverimg h-100 w-100 position-absolute opacity-3" style="background-image: url('./img/icon/kategori-1.png');background-position: center;background-size: cover;">
+              </div>
+              <div class="card-body">
+                <div class="row mb-3">
+                  <div class="col">
+                    <span class="tag">Trending</span>
+                  </div>
+                </div>
+                <br>
+                <a href="blog-details.html" class="h4 text-normal d-block text-white">Saintek IPB 2021</a>
+                <p class="text-muted mt-0">10 Kuis</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-100" style="padding: 0px 0px!important;">
+           <div class="card mb-2 overflow-hidden shadow-sm bg-default text-white">
+            <div class="overlay"></div>
+            <div class="coverimg h-100 w-100 position-absolute opacity-3" style="background-image: url('./img/icon/kategori-2.png');background-position: center;background-size: cover;">
+            </div>
+            <div class="card-body">
+              <div class="row mb-3">
+                <div class="col">
+                  <span class="tag">Trending</span>
+                </div>
+              </div>
+              <br>
+              <a href="blog-details.html" class="h4 text-normal d-block text-white">Soshum UNJ 2021</a>
+              <p class="text-muted mt-0">10 Kuis</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-100" style="padding: 0px 0px!important;">
+         <div class="card mb-2 overflow-hidden shadow-sm bg-default text-white">
+          <div class="overlay"></div>
+          <div class="coverimg h-100 w-100 position-absolute opacity-3" style="background-image: url('./img/icon/kategori-3.png');background-position: center;background-size: cover;">
+          </div>
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col">
+                <span class="tag">Trending</span>
+              </div>
+            </div>
+            <br>
+            <a href="blog-details.html" class="h4 text-normal d-block text-white">Saintek ITB 2020</a>
+            <p class="text-muted mt-0">10 Kuis</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-100" style="padding: 0px 0px!important;">
+       <div class="card mb-2 overflow-hidden shadow-sm bg-default text-white">
+        <div class="overlay"></div>
+        <div class="coverimg h-100 w-100 position-absolute opacity-3" style="background-image: url('./img/icon/kategori-4.png');background-position: center;background-size: cover;">
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col">
+              <span class="tag">Trending</span>
+            </div>
+          </div>
+          <br>
+          <a href="blog-details.html" class="h4 text-normal d-block text-white">SIMAK UI 2020</a>
+          <p class="text-muted mt-0">10 Kuis</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="white-padding-margin bg-white margin-top">
+  <div class="block margin-15 pt-3 pb-3">
+   <div class="row">
+    <div class="col-100">
+      <h6>Seri Kuis</h6>
+      <a href="#" class="right-button-dashboard">Lihat Semua</a>
+      <div class="swiper-container swiperhighlight">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card shadow-sm bg-danger text-white">
+              <div class="card-body">
+                <img src="./img/icon/kategori-4.png" alt="" class="img-card-dashboard">
+                <h6 class="mt-2">SIMAK UI 2021</h6>
+                <p class="text-muted small mt-0">12 task</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card shadow-sm bg-success text-white">
+              <div class="card-body">
+                <img src="./img/icon/kategori-1.png" alt="" class="img-card-dashboard">
+                <h6 class="mt-2">SIMAK UI 2021</h6>
+                <p class="text-muted small mt-0">12 task</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card shadow-sm bg-primary text-white">
+              <div class="card-body">
+                <img src="./img/icon/kategori-2.png" alt="" class="img-card-dashboard">
+                <h6 class="mt-2">SIMAK UI 2021</h6>
+                <p class="text-muted small mt-0">12 task</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card shadow-sm bg-warning text-white">
+              <div class="card-body">
+                <img src="./img/icon/kategori-3.png" alt="" class="img-card-dashboard">
+                <h6 class="mt-2">SIMAK UI 2021</h6>
+                <p class="text-muted small mt-0">12 task</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- TAB 3 -->
+<div id="tab-3" class="page-content tab pb-55">
+  <div class="page-content bg-dashboard" style="padding-bottom: 90px;">
+    <div class="white-padding-margin bg-white no-margin box-shadow-1">
+      <div class="block margin-15">
+        <div class="row pt-4 pb-3">
+          <div class="col-70">
+            <h3>Pembahasan</h3>
+          </div>
+          <div class="col-30">
+            <i class="icon material-icons md-only icon-left-dashboard">search</i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-padding-margin bg-white margin-top">
+      <div class="block margin-15 pt-1 pb-3">
+       <div class="row">
+        <div class="col-100">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0" style="border-bottom: 1px solid #00000030 !important;">
+              <div class="row">
+                <div class="col px-0">
+                  <p class="mt-0">TRYOUT TPS UTBK 2021 - 210421<br>
+                    <small class="badge bg-primary p-1">GooglesInc</small> - 80 Soal</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0" style="border-bottom: 1px solid #00000030 !important;">
+                <div class="row">
+                  <div class="col px-0">
+                    <p class="mt-0">TRYOUT TPS UTBK 2021 - 210421<br>
+                      <small class="badge bg-primary p-1">Micro Software</small> - 80 Soal</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="list-group-item border-0" style="border-bottom: 1px solid #00000030 !important;">
+                  <div class="row">
+                    <div class="col px-0">
+                      <p class="mt-0">TRYOUT TPS UTBK 2021 - 210421<br>
+                        <small class="badge bg-primary p-1">ApplesCorp</small> - 80 Soal</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4 -->
+    <div id="tab-4" class="page-content tab pb-55">
+      <div class="page-content bg-dashboard" style="padding-bottom: 90px;">
+        <div class="white-padding-margin bg-white no-margin box-shadow-1">
+          <div class="block margin-15">
+            <div class="row pt-4 pb-3">
+              <div class="col-70">
+                <h3>Analisis</h3>
+              </div>
+              <div class="col-30">
+                <i class="icon material-icons md-only icon-left-dashboard">settings</i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-padding-margin bg-white">
+          <div class="block margin-15 pt-3 pb-3">
+           <div class="row">
+            <div class="col-100">
+              <h6>Analisis Performance</h6>
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="row">
+                    <div class="col-6 col-md-12">
+                      <div class="card shadow-sm text-center mb-4">
+                        <div class="card-body">
+                          <div id="progressCircle1" class="progressCircle mb-3"></div>
+                          <h6 class="mb-1">34251</h6>
+                          <p class="text-muted small">Jawaban Benar</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-12">
+                      <div class="card shadow-sm text-center mb-4">
+                        <div class="card-body">
+                          <div id="progressCircle2" class="progressCircle mb-3"></div>
+                          <h6 class="mb-1">6588</h6>
+                          <p class="text-muted small">Jawaban Salah</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h6>Excellent work</h6>
+                  <p class="text-muted small">You are on the right place and right track. Good luck</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h6>Much Appreaciated</h6>
+                  <p class="text-muted small">You are on the right place and right track. Good luck</p>
+                </div>               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="white-padding-margin bg-white margin-top">
+        <div class="block margin-15 pt-3 pb-3">
+         <div class="row">
+          <div class="col-12">
+            <h6>Kuis Yang Pernah Diikuti</h6>
+            <div class="card shadow-sm">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item border-0">
+                  <div class="row">
+                    <div class="col-auto">
+                      <figure class="avatar avatar-50 rounded-circle" style="margin-top: 9px;">
+                        <img src="./img/icon/kategori-1.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="col px-0">
+                      <p>SIMAK UI 2021<br><small class="text-muted">20 Soal</small></p>
+                    </div>
+                    <div class="col-auto text-end">
+                      <p>
+                        <br><small class="text-success">Soal Yang Benar: 20</small>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item border-0">
+                  <div class="row">
+                    <div class="col-auto">
+                      <figure class="avatar avatar-50 rounded-circle" style="margin-top: 9px;">
+                        <img src="./img/icon/kategori-2.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="col px-0">
+                      <p>SIMAK UI 2021<br><small class="text-muted">20 Soal</small></p>
+                    </div>
+                    <div class="col-auto text-end">
+                      <p>
+                        <br><small class="text-success">Soal Yang Benar: 20</small>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="list-group-item border-0">
+                  <div class="row">
+                    <div class="col-auto">
+                      <figure class="avatar avatar-50 rounded-circle" style="margin-top: 9px;">
+                        <img src="./img/icon/kategori-3.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="col px-0">
+                      <p>SIMAK UI 2021<br><small class="text-muted">20 Soal</small></p>
+                    </div>
+                    <div class="col-auto text-end">
+                      <p>
+                        <br><small class="text-success">Soal Yang Benar: 20</small>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="list-group-item border-0">
+                  <div class="row">
+                    <div class="col-auto">
+                      <figure class="avatar avatar-50 rounded-circle" style="margin-top: 9px;">
+                        <img src="./img/icon/kategori-4.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="col px-0">
+                      <p>SIMAK UI 2021<br><small class="text-muted">20 Soal</small></p>
+                    </div>
+                    <div class="col-auto text-end">
+                      <p>
+                        <br><small class="text-success">Soal Yang Benar: 20</small>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5 -->
+<div id="tab-5" class="page-content tab pb-55">
+  <div class="page-content bg-dashboard" style="padding-bottom: 90px;">
+    <div class="block margin-top">
+      <div class="row">
+        <div class="col-100">
+          <div class="list media-list inset">
+            <ul>
+              <li>
+                <a href="/dashboard" class="item-link item-content no-padding" style="min-height: 32px !important;padding-top: 12px !important;">
+                  <div class="item-inner no-padding" style="min-height: 32px !important;">
+                    <div class="item-title-row">
+                      <div class="item-title"><i class="icon material-icons md-only" style="font-size: 20px;">person_pin</i> Akun Saya</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard/" class="item-link item-content no-padding" style="min-height: 32px !important;padding-top: 12px !important;">
+                  <div class="item-inner no-padding" style="min-height: 32px !important;">
+                    <div class="item-title-row">
+                      <div class="item-title"><i class="icon material-icons md-only" style="font-size: 20px;">lock</i> Syarat dan Ketentuan</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard/" class="item-link item-content no-padding" style="min-height: 32px !important;padding-top: 12px !important;">
+                  <div class="item-inner no-padding" style="min-height: 32px !important;">
+                    <div class="item-title-row">
+                      <div class="item-title"><i class="icon material-icons md-only" style="font-size: 20px;">report_problem</i> Bantuan</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block white-padding-margin margin-top">
+      <div class="row">
+        <div class="col-100">
+          <button class="button button-raised button-fill" onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

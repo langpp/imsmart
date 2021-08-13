@@ -1,0 +1,57 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.internetslim.koperasiadmin"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.pasien.misidok"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.pasien.misidok"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.pasien.misidok"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.pasien.misidok"
+    },
+    "phonegap-plugin-mobile-accessibility": {
+      "PACKAGE_NAME": "com.pasien.misidok"
+    },
+    "cordova-plugin-crop": {
+      "PACKAGE_NAME": "com.pasien.misidok"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.pasien.misidok"
+    }
+  }
+}

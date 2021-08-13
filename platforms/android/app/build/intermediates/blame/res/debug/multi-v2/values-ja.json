@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\smart\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ja\\values-ja.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\gilan\\.gradle\\caches\\transforms-1\\files-1.1\\android-crop-1.0.0.aar\\6af8b16af445d73ecb2e0e9f29444079\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "215,286,328,384,430",
+                        "endColumns": "70,41,55,45,47",
+                        "endOffsets": "281,323,379,425,473"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "100,171,213,269,315",
+                        "endColumns": "70,41,55,45,47",
+                        "endOffsets": "166,208,264,310,358"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gilan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7dd8d17c3d9936251eaee956bba6c133\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "363",
+                        "endColumns": "100",
+                        "endOffsets": "459"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\pasien\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ja\\values-ja.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\gilan\\.gradle\\caches\\transforms-1\\files-1.1\\android-crop-1.0.0.aar\\6af8b16af445d73ecb2e0e9f29444079\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "215,286,328,384,430",
+                        "endColumns": "70,41,55,45,47",
+                        "endOffsets": "281,323,379,425,473"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "100,171,213,269,315",
+                        "endColumns": "70,41,55,45,47",
+                        "endOffsets": "166,208,264,310,358"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gilan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7dd8d17c3d9936251eaee956bba6c133\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "363",
+                        "endColumns": "100",
+                        "endOffsets": "459"
+                    }
+                }
+            ]
+        }
+    ]
+}
