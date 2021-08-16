@@ -1,4 +1,17 @@
 $(document).on('page:init', '.page[data-name="dashboard"]', function (e) {
+	var htmlslider = `<div class="swiper-slide"><div class="card shadow-sm bg-danger text-white w-100"><div class="card-body"><img src="./img/icon/kategori-4.png" alt="" class="img-card-dashboard"><h6 class="mt-2">SIMAK UI 2021</h6><p class="text-muted small mt-0">12 task</p></div></div></div><div class="swiper-slide"><div class="card shadow-sm bg-success text-white w-100"><div class="card-body"><img src="./img/icon/kategori-1.png" alt="" class="img-card-dashboard"><h6 class="mt-2">SIMAK UI 2021</h6><p class="text-muted small mt-0">12 task</p></div></div></div><div class="swiper-slide"><div class="card shadow-sm bg-primary text-white w-100"><div class="card-body"><img src="./img/icon/kategori-2.png" alt="" class="img-card-dashboard"><h6 class="mt-2">SIMAK UI 2021</h6><p class="text-muted small mt-0">12 task</p></div></div></div><div class="swiper-slide"><div class="card shadow-sm bg-warning text-white w-100"><div class="card-body"><img src="./img/icon/kategori-3.png" alt="" class="img-card-dashboard"><h6 class="mt-2">SIMAK UI 2021</h6><p class="text-muted small mt-0">12 task</p></div></div></div>`
+    var swiper = app.swiper.create('.swiper-container', {
+        speed: 1000,
+        slidesPerView: 2,
+        loop: true,
+        loopedSlides: 4,
+        observer: true
+    });
+    swiper.appendSlide(htmlslider);
+    swiper.autoplay.start();
+
+    var today = new Date();
+    $("input[type='date']").val(today.toISOString().substr(0, 10));
 	window.randomScalingFactor = function () {
         return Math.round(Math.random() * 50);
     }

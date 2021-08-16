@@ -289,3 +289,35 @@ textarea {
 .swiperhighlight .swiper-wrapper .swiper-slide{
   width:300px;
 }
+
+.icon-left-dashboard-select {
+    font-size: 16px !important;
+    position: absolute !important;
+    right: 5px;
+}
+
+.list li .item-checkbox{
+    padding: 0px 15px !important;
+}
+
+#selectpembahasan .item-after{
+    display:none !important;
+}
+
+.img-win{
+  width: 100%;
+  display: block;
+  position: relative;
+  margin: 0px auto;
+}
+
+.img-profile-win{
+    padding: 12px 0px;
+    display: block;
+    position: relative;
+}
+
+.img-profile-win img {
+    width: 75px;
+    padding-bottom: 12px;
+}

@@ -104,7 +104,7 @@
           <div class="col-70">
             <h3>Ujian</h3>
           </div>
-          <div class="col-30">
+          <div class="col-30 sheet-open" data-sheet=".my-sheet-swipe-to-close-ujian">
             <i class="icon material-icons md-only icon-left-dashboard">settings</i>
           </div>
         </div>
@@ -116,7 +116,7 @@
        <div class="row">
         <div class="col-100">
           <h6>Kategori Kuis</h6>
-          <a href="#" class="right-button-dashboard">Lihat Semua</a>
+          <a href="/ujian" class="right-button-dashboard">Lihat Semua</a>
           <div class="row">
             <div class="w-100" style="padding: 0px 0px!important;">
              <div class="card mb-2 overflow-hidden shadow-sm bg-default text-white">
@@ -130,7 +130,7 @@
                   </div>
                 </div>
                 <br>
-                <a href="blog-details.html" class="h4 text-normal d-block text-white">Saintek IPB 2021</a>
+                <a href="/ujian/list/123" class="h4 text-normal d-block text-white">Saintek IPB 2021</a>
                 <p class="text-muted mt-0">10 Kuis</p>
               </div>
             </div>
@@ -147,7 +147,7 @@
                 </div>
               </div>
               <br>
-              <a href="blog-details.html" class="h4 text-normal d-block text-white">Soshum UNJ 2021</a>
+              <a href="/ujian/list/123" class="h4 text-normal d-block text-white">Soshum UNJ 2021</a>
               <p class="text-muted mt-0">10 Kuis</p>
             </div>
           </div>
@@ -164,7 +164,7 @@
               </div>
             </div>
             <br>
-            <a href="blog-details.html" class="h4 text-normal d-block text-white">Saintek ITB 2020</a>
+            <a href="/ujian/list/123" class="h4 text-normal d-block text-white">Saintek ITB 2020</a>
             <p class="text-muted mt-0">10 Kuis</p>
           </div>
         </div>
@@ -181,7 +181,7 @@
             </div>
           </div>
           <br>
-          <a href="blog-details.html" class="h4 text-normal d-block text-white">SIMAK UI 2020</a>
+          <a href="/ujian/list/123" class="h4 text-normal d-block text-white">SIMAK UI 2020</a>
           <p class="text-muted mt-0">10 Kuis</p>
         </div>
       </div>
@@ -198,44 +198,10 @@
     <div class="col-100">
       <h6>Seri Kuis</h6>
       <a href="#" class="right-button-dashboard">Lihat Semua</a>
-      <div class="swiper-container swiperhighlight">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card shadow-sm bg-danger text-white">
-              <div class="card-body">
-                <img src="./img/icon/kategori-4.png" alt="" class="img-card-dashboard">
-                <h6 class="mt-2">SIMAK UI 2021</h6>
-                <p class="text-muted small mt-0">12 task</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow-sm bg-success text-white">
-              <div class="card-body">
-                <img src="./img/icon/kategori-1.png" alt="" class="img-card-dashboard">
-                <h6 class="mt-2">SIMAK UI 2021</h6>
-                <p class="text-muted small mt-0">12 task</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow-sm bg-primary text-white">
-              <div class="card-body">
-                <img src="./img/icon/kategori-2.png" alt="" class="img-card-dashboard">
-                <h6 class="mt-2">SIMAK UI 2021</h6>
-                <p class="text-muted small mt-0">12 task</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow-sm bg-warning text-white">
-              <div class="card-body">
-                <img src="./img/icon/kategori-3.png" alt="" class="img-card-dashboard">
-                <h6 class="mt-2">SIMAK UI 2021</h6>
-                <p class="text-muted small mt-0">12 task</p>
-              </div>
-            </div>
-          </div>
+      <div data-pagination='{"el": ".swiper-pagination"}' data-slides-per-view="2" data-loop="true" class="swiper-container swiper-init demo-swiper no-margin">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper" id="sliderdashboard">
+
         </div>
       </div>
     </div>
@@ -256,7 +222,35 @@
             <h3>Pembahasan</h3>
           </div>
           <div class="col-30">
-            <i class="icon material-icons md-only icon-left-dashboard">search</i>
+            <div class="icon-left-dashboard-select">
+              <a class="item-link smart-select smart-select-init" data-open-in="popup" data-searchbar="true">
+                <select name="pembahasan" multiple>
+                  <optgroup label="Universitas Indonesia">
+                    <option value="Materi 1" selected>Materi 1</option>
+                    <option value="Materi 2" selected>Materi 2</option>
+                    <option value="Materi 3" >Materi 3</option>
+                    <option value="Materi 4" >Materi 4</option>
+                  </optgroup>
+                  <optgroup label="ITB">
+                    <option value="Materi 1" selected>Materi 1</option>
+                    <option value="Materi 2" selected>Materi 2</option>
+                    <option value="Materi 3" >Materi 3</option>
+                    <option value="Materi 4" >Materi 4</option>
+                  </optgroup>
+                  <optgroup label="IPB">
+                    <option value="Materi 1" selected>Materi 1</option>
+                    <option value="Materi 2" selected>Materi 2</option>
+                    <option value="Materi 3" >Materi 3</option>
+                    <option value="Materi 4" >Materi 4</option>                
+                  </optgroup>
+                </select>
+                <div class="item-content" id="selectpembahasan">
+                  <div class="item-inner">
+                    <div class="item-title">Cari</div>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -269,27 +263,27 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item border-0" style="border-bottom: 1px solid #00000030 !important;">
               <div class="row">
-                <div class="col px-0">
+                <a href="/pembahasan/detail/1234" class="col px-0 color-black">
                   <p class="mt-0">TRYOUT TPS UTBK 2021 - 210421<br>
                     <small class="badge bg-primary p-1">GooglesInc</small> - 80 Soal</p>
-                  </div>
+                  </a>
                 </div>
               </li>
               <li class="list-group-item border-0" style="border-bottom: 1px solid #00000030 !important;">
                 <div class="row">
-                  <div class="col px-0">
+                  <a href="/pembahasan/detail/1234" class="col px-0 color-black">
                     <p class="mt-0">TRYOUT TPS UTBK 2021 - 210421<br>
                       <small class="badge bg-primary p-1">Micro Software</small> - 80 Soal</p>
-                    </div>
+                    </a>
                   </div>
                 </li>
 
                 <li class="list-group-item border-0" style="border-bottom: 1px solid #00000030 !important;">
                   <div class="row">
-                    <div class="col px-0">
+                    <a href="/pembahasan/detail/1234" class="col px-0 color-black">
                       <p class="mt-0">TRYOUT TPS UTBK 2021 - 210421<br>
                         <small class="badge bg-primary p-1">ApplesCorp</small> - 80 Soal</p>
-                      </div>
+                      </a>
                     </div>
                   </li>
                 </ul>
@@ -309,7 +303,7 @@
               <div class="col-70">
                 <h3>Analisis</h3>
               </div>
-              <div class="col-30">
+              <div class="col-30 sheet-open" data-sheet=".my-sheet-swipe-to-close-analisis">
                 <i class="icon material-icons md-only icon-left-dashboard">settings</i>
               </div>
             </div>
@@ -512,5 +506,196 @@
     </div>
   </div>
 </div>
+</div>
+
+<div class="sheet-modal my-sheet-swipe-to-close-ujian" style="height:350px; --f7-sheet-bg-color: #fff;">
+  <div class="sheet-modal-inner">
+    <div class="page-content">
+      <div class="block-title block-title-large text-align-center"><b>Pengaturan Akun</b></div>
+      <div class="block">
+        <div class="row">
+          <h5 class="small text-muted">Quiz and Exam Series</h5>
+          <div class="col-35">
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck0" checked="">
+                  <label class="form-check-label" for="taskcheck0"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">TPS-1</h6>
+              </div>
+            </div>
+
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck1" checked="">
+                  <label class="form-check-label" for="taskcheck1"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">TPA</h6>
+              </div>
+            </div>
+
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck2" checked="">
+                  <label class="form-check-label" for="taskcheck2"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">AQ test</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-65">
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck3" checked="">
+                  <label class="form-check-label" for="taskcheck3"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">Saintek</h6>
+              </div>
+            </div>
+
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck4" checked="">
+                  <label class="form-check-label" for="taskcheck4"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">Kemampuan Dasar</h6>
+              </div>
+            </div>
+
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck5" checked="">
+                  <label class="form-check-label" for="taskcheck5"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">Repeat Test</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <h5 class="small text-muted">LMS Kategori</h5>
+          <div class="col-35">
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck6" checked="">
+                  <label class="form-check-label" for="taskcheck6"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">Music</h6>
+              </div>
+            </div>
+
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck7" checked="">
+                  <label class="form-check-label" for="taskcheck7"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">History</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-65">
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck8" checked="">
+                  <label class="form-check-label" for="taskcheck8"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">Physics</h6>
+              </div>
+            </div>
+
+            <div class="row gx-2">
+              <div class="col-auto align-self-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskcheck9" checked="">
+                  <label class="form-check-label" for="taskcheck9"></label>
+                </div>
+              </div>
+              <div class="col">
+                <h6 class="mb-1">English Grammer</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-100">
+            <button type="button" class="btn btn-primary btn-block mt-3">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet-modal my-sheet-swipe-to-close-analisis" style="height:230px; --f7-sheet-bg-color: #fff;">
+  <div class="sheet-modal-inner">
+    <div class="page-content">
+      <div class="block-title block-title-large text-align-center"><b>Analisis Akun</b></div>
+      <div class="block">
+        <div class="row">
+          <div class="col-50">
+            <div class="list no-hairlines-md">
+              <ul>
+                <div class="item-title item-label">Awal <span class="text-color-red">*</span></div>
+                <li class="item-content item-input" style="min-height: auto !important;">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="date" id="awal"/>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-50">
+            <div class="list no-hairlines-md">
+              <ul>
+                <div class="item-title item-label">Akhir <span class="text-color-red">*</span></div>
+                <li class="item-content item-input" style="min-height: auto !important;">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="date" id="akhir"/>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-100">
+            <button type="button" class="btn btn-primary btn-block mt-3">Simpan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>

@@ -24,7 +24,7 @@ var routes = [
     url: './pages/ujian/index.html',
   },
   {
-    path: '/ujian/list',
+    path: '/ujian/list/:ujian_id',
     url: './pages/ujian/list.html',
   },
   {
@@ -36,17 +36,13 @@ var routes = [
     url: './pages/ujian/petunjuk.html',
   },
   {
-    path: '/ujian/quiz',
-    url: './pages/ujian/quiz.html',
-  },
-  {
     path: '/ujian/selesai',
     url: './pages/ujian/selesai.html',
   },
   // PEMBAHASAN
   {
     path: '/pembahasan/detail/:pembahasan_id',
-    url: './pages/ujian/detail.html',
+    url: './pages/pembahasan/detail.html',
   },
   // OFFLINE PAGE
   {

@@ -24,6 +24,17 @@ var app = new Framework7({
 	},
 });
 
+var swiper = app.swiper.create('.swiper-container', {
+    speed: 500,
+    //slidesPerView: auto,
+    loop: true,
+    autoHeight: true,
+    shortSwipes: false,
+    longSwipes: false,
+    //effect:'fade'
+    //spaceBetween: 100
+});
+
 var apiurl = "https://dev.abbauf.com/";
 var imgnull = "./img/lainnya/notfound.jpg";
 var iconurl = "./img/icon/";
@@ -34,7 +45,8 @@ app.on('init', function (e) {
 	if (localStorage.getItem("access_token")) {
 		app.router.navigate("/dashboard/");
 	} else {
-		app.router.navigate('/auth/login/');
+		// app.router.navigate('/auth/login/');
+		app.router.navigate('/ujian/selesai');
 	}
 
 	// function checkConnection() {
